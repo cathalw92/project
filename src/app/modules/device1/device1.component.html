@@ -1,0 +1,80 @@
+
+<!--ngIF checks if device is offline, it wil not render if device is offline-->
+<div *ngIf ="device1.length>0; else offline" >
+  <mat-divider></mat-divider>
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class = "device-cards">
+      <mat-card fxFlex="50">
+      <mat-card-title>Device Status</mat-card-title>
+      <mat-card-content>Online</mat-card-content>
+      </mat-card>
+        <mat-card fxFlex="50">
+          <mat-card-title>Installation Date</mat-card-title>
+          <mat-card-content>11 Mar 2021</mat-card-content>
+        </mat-card>
+      </div>
+      <br>
+  <mat-divider></mat-divider>
+  <ng-container *ngFor="let d of device1; first as isFirst">
+    <div *ngIf="isFirst" class="row">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header [collapsedHeight]="'80px'" [expandedHeight]="'100px'">
+          <mat-panel-title fxLayoutalign="center center">
+            Battery
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class = "device-cards">
+          <mat-card fxFlex="25">
+            <mat-card-title>Runtime</mat-card-title>
+            <mat-card-content>24+ hours</mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="25">
+            <mat-card-title>Battery Charge</mat-card-title>
+            <mat-card-content>{{ d.battery }} %</mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="25">
+            <mat-card-title>Temperature</mat-card-title>
+            <mat-card-content>{{ d.temperature }} C</mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="25">
+            <mat-card-title>Replace By</mat-card-title>
+            <mat-card-content>11 Mar 2024</mat-card-content>
+          </mat-card>
+        </div>
+      </mat-expansion-panel>
+      <br>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header [collapsedHeight]="'80px'" [expandedHeight]="'100px'">
+          <mat-panel-title>
+            Device
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class = "device-cards">
+          <mat-card fxFlex="33.3">
+            <mat-card-title>Input</mat-card-title>
+            <mat-card-content>{{ d.input }} V </mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="33.3">
+            <mat-card-title>Output</mat-card-title>
+            <mat-card-content>{{ d.output }} V</mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="33.3">
+            <mat-card-title>Warranty</mat-card-title>
+            <mat-card-content>Expires 14 May 2021</mat-card-content>
+          </mat-card>
+        </div>
+      </mat-expansion-panel>
+
+    </div>
+  </ng-container>
+
+  <!--Display if device is offline -->
+</div>
+
+<ng-template #offline>
+  <mat-divider></mat-divider>
+  <p>Device Offline</p>
+  <mat-divider></mat-divider>
+</ng-template>
+
+

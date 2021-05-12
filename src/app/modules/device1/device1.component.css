@@ -1,0 +1,46 @@
+
+.mat-expansion-panel{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mat-expansion-panel-header{
+  font-size: 40px;
+  align-items: center;
+
+}
+
+.mat-expansion-panel-header-title{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mat-expansion-panel-header-description{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+.cardList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* Column Gap */
+.cardList > * {
+  box-sizing: border-box;
+}
+.cardList > *:not(:last-child) {
+  margin-right: 32px;
+}
+/* Item sizing */
+.cardListItem {
+  flex: 0 1 calc(33.3% - 32px);
+}

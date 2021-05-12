@@ -1,0 +1,46 @@
+<h1> Dashboard</h1>
+
+<div *ngIf ="device1.length>0; else offline"  >
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+        <td mat-cell *matCellDef="let device"> {{device.id}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let device" > {{device.name}} </td>
+      </ng-container>
+      <!-- status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef > Status </th>
+        <td mat-cell *matCellDef="let device">
+          <div [innerHTML]="device.status" ></div>
+        </td>
+      </ng-container>
+      <!-- Button Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell  *matHeaderCellDef > Actions </th>
+        <td mat-cell class="right" *matCellDef="let device" >
+          <button mat-button routerLink= "{{device.deviceLink}}">View</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[1, 10, 20]" showFirstLastButtons></mat-paginator>
+    <div>
+    </div>
+  </div>
+</div>
+<ng-template #offline>
+  <mat-card class="Error">  <h2>ERROR! Service Offline please contact <a>support</a></h2></mat-card>
+</ng-template>
+
+
+
+
+
+

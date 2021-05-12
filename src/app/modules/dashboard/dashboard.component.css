@@ -1,0 +1,33 @@
+h1 {
+  padding-top: 20px;
+  padding-bottom: 30px;
+    font-size: 70px;
+}
+table {
+  margin-right: 100000px;
+  width: 100%;
+}
+th
+{
+  color: #ffffff;
+  background-color: #3F51B5;
+}
+
+tr.fourth {
+  text-align: right;
+}
+.mat-paginator {
+  display: flex;
+  justify-content: left;
+  font-size: 12px;
+}
+
+.mat-elevation-z8{
+  margin-right: 25px;
+}
+.material-icons {
+color: green;
+}
+.Error {
+  color: red;
+}

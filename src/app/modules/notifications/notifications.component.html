@@ -1,0 +1,56 @@
+
+
+<ng-container *ngFor="let project of device1; first as isFirst">
+
+  <div *ngIf="isFirst" class="row">
+    <div class="col">
+      <table class="table table-bordered">
+        <thead class="bg-dark text-light">
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{ project.iddevice1 }}</td>
+          <td>{{project.name}}</td>
+          <td >{{ project.input }}</td>
+          <td>{{ project.output }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-container>
+
+
+<tbody>
+<ng-container *ngFor="let project of device2; first as isFirst">
+
+  <div *ngIf="isFirst" class="row">
+    <div class="col">
+      <table class="table table-bordered">
+        <thead class="bg-dark text-light">
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+
+          <td>{{ project.iddevice2 }}</td>
+          <td>{{project.name}}</td>
+          <td>{{ project.input }}</td>
+          <td>{{ project.output }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-container>
